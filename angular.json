@@ -28,6 +28,7 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -121,8 +122,16 @@
               "devServerTarget": "mock-counseling-fe:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {}
         }
       }
-    }},
-  "defaultProject": "mock-counseling-fe"
+    }
+  },
+  "defaultProject": "mock-counseling-fe",
+  "cli": {
+    "analytics": "62579c0e-9db3-426a-a8f1-1013a794c46c"
+  }
 }

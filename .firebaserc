@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "mockcounceling": {
+      "hosting": {
+        "mock-counseling-fe": [
+          "mockcounceling"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "mockcounceling"
+  }
+}

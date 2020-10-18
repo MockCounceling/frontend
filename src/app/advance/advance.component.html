@@ -1,0 +1,60 @@
+<h3>IIT Prediction</h3>
+<form [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
+    <div>
+      <label for="name">
+        category Rank
+      </label>
+      <input id="rank" type="text" formControlName="rank" />
+    </div>
+  
+    <div>
+      <label for="gender">
+        gender
+      </label>
+    
+      <select id="gender" name="gender"  formControlName="gender">
+        <option value="f">Female</option>
+        <option value="m">Male</option>
+      </select>
+    </div>
+    <div>
+        <label for="category">
+            category
+        </label>
+       
+        <select id="category" name="category"  formControlName="category">
+            <option value="General">General</option>
+            <option value="EWS">EWS</option>
+            <option value="OBC-NCL">OBC-NCL</option>
+            <option value="SC">SC</option>
+            <option value="ST">ST</option>
+          </select>
+      </div>
+    <button type="submit">Predict</button>
+  </form>
+  
+<div *ngIf ="college">
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th scope="col">id</th>
+    <th scope="col">College</th>
+    <th scope="col">Branch</th>
+    <th scope="col">State</th>
+    <th scope="col">Closing Rank</th>
+    <th scope="col">Gender</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let iit of college | async; index as i">
+    <th scope="row">{{ i + 1 }}</th>
+    <td>{{ iit._source.institute }}</td>
+    <td>{{ iit._source.academic_program }}</td>
+    <td>{{ iit._source.state }}</td>
+    <td>{{ iit._source.closing_rank }}</td>
+    <td>{{ iit._source.seat_pool }}</td>
+  </tr>
+  </tbody>
+</table>
+
+</div>
